@@ -1,21 +1,12 @@
 [tool.poetry]
 name = "pytest-gha-template"
 version = "0.1.0"
-description = "A template project for pytest with GitHub Actions"
-authors = ["Your Name <your.email@example.com>"]
-
-[tool.poetry.dependencies]
-python = "^3.8"
-
-[tool.poetry]
-name = "pytest-gha-template"
-version = "0.1.0"
-description = "A template project for pytest with GitHub Actions"
+description = "Pythonプロジェクトのテンプレート with GitHub Actions"
 authors = ["Your Name <your.email@example.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">=3.8,<4.0"
+python = "^3.8"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.3.1"
@@ -28,28 +19,7 @@ coverage = "^7.2.5"
 [tool.pytest.ini_options]
 minversion = "6.0"
 addopts = "-ra -q"
-testpaths = [
-    "tests",
-]
-
-[tool.black]
-line-length = 88
-target-version = ['py38']
-
-[tool.isort]
-profile = "black"
-multi_line_output = 3
-
-[tool.mypy]
-ignore_missing_imports = true
-check_untyped_defs = true
-
-[tool.pytest.ini_options]
-minversion = "6.0"
-addopts = "-ra -q"
-testpaths = [
-    "tests",
-]
+testpaths = ["tests"]
 
 [tool.black]
 line-length = 88

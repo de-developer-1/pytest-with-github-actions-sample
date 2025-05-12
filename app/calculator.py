@@ -1,4 +1,4 @@
-"""Simple calculator module for demonstration."""
+"""Simple calculator module."""
 
 def add(a: int, b: int) -> int:
     """Add two numbers."""
@@ -14,7 +14,7 @@ def multiply(a: int, b: int) -> int:
 
 def divide(a: int, b: int) -> float:
     """Divide first number by second.
-    
+
     Raises:
         ZeroDivisionError: If b is zero.
     """
