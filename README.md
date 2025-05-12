@@ -1,90 +1,67 @@
-# pytest-with-github-actions-sample
-概要
-==============
-これは、以下を示すサンプルPythonプロジェクトです：
-- Pytestによる単体テスト
-- GitHub Actionsを使用した継続的インテグレーション（CI）
-- コード品質のためのPre-commitフック
+# Pytest と GitHub Actions の実践リポジトリ
 
-プロジェクト構造
-==============
-- `app/`: アプリケーションのソースコード
-- `tests/`: テストケース
-- `.github/workflows/`: GitHub Actions設定
-- `.pre-commit-config.yaml`: Pre-commitフック設定
+## 概要
+このリポジトリは、PythonプロジェクトにおけるpytestとGitHub Actionsを使った継続的インテグレーションのデモンストレーション用です。
 
-セットアップと導入
-==============
+## リポジトリ構成
+```
+pytest-with-github-actions-sample/
+│
+├── .github/
+│   └── workflows/
+│       └── python-app.yml        # GitHub Actions ワークフロー設定
+│
+├── app/
+│   ├── calculator.py              # メインアプリケーションロジック
+│   └── __init__.py
+│
+├── tests/
+│   ├── test_calculator.py         # テストケース
+│   └── __init__.py
+│
+├── requirements.txt               # 依存関係の定義
+└── .gitignore
+```
 
-前提条件
---------------
-- Python 3.8以上
+## 機能
+- 基本的な算術演算を行う電卓クラス
+- pytestを使用した包括的なテストスイート
+- 自動テスト用のGitHub Actionsワークフロー
+
+## はじめに
+
+### 前提条件
+- Python 3.9以上
 - pip
-- poetry（推奨）
 
-ローカル開発セットアップ
---------------
-1. リポジトリのクローン
+### インストール
+1. リポジトリをクローン
 ```bash
-git clone git@github.com:de-developer-1/pytest-with-github-actions-sample.git
+git clone https://github.com/yourusername/pytest-gha-template.git
 cd pytest-gha-template
 ```
 
-2. 依存関係のインストール
+2. （オプション）仮想環境の作成と有効化
 ```bash
-# pipを使用
+python -m venv venv
+source venv/bin/activate  # Windowsの場合は `venv\Scripts\activate`
+```
+
+3. 依存関係のインストール
+```bash
 pip install -r requirements.txt
-
-# poetryを使用
-poetry install
 ```
 
-3. pre-commitフックのインストール
+### テストの実行
 ```bash
-pre-commit install
-```
-
-テストの実行
---------------
-```bash
-# pytestを直接使用
 pytest
-
-# poetryを使用
-poetry run pytest
 ```
 
-継続的インテグレーション
-==============
-このプロジェクトはGitHub Actionsを使用して以下を実行します：
-- 複数のPythonバージョンでテストを実行
-- コードフォーマットをチェック
-- リンターを実行
-- カバレッジレポートを生成
+## GitHub Actions
+このリポジトリは、以下のタイミングで自動的にテストを実行するGitHub Actionsを使用：
+- mainブランチへのプッシュ時
+- mainブランチへのプルリクエスト時
 
-Pre-commitフック
-==============
-以下を実行するように設定：
-- Black（コードフォーマット）
-- Flake8（リンティング）
-- isort（インポートの整理）
-- mypyによる型チェック
-
-## リポジトリ構成
-
-```
-pytest-with-github-actions-sample/
-├── .github/
-│   └── workflows/
-│       └── python-app.yml     # GitHub Actions設定
-├── app/
-│   ├── calculator.py           # サンプルアプリケーションコード
-│   └── __init__.py
-├── tests/
-│   ├── test_calculator.py      # テストコード
-│   └── __init__.py
-├── .pre-commit-config.yaml     # pre-commit設定
-├── pyproject.toml              # プロジェクト設定
-├── README.md                   # プロジェクト説明書
-└── .gitignore
-```
+## 注意点
+- このテンプレートは学習と実践のためのサンプルプロジェクトです
+- 実際のプロジェクトに適用する際は、必要に応じてカスタマイズしてください
